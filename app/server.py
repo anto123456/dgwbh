@@ -10,7 +10,7 @@ from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
 export_file_url = 'https://www.dropbox.com/s/xw4kzxi0jrf1gou/dgwbh.pkl?dl=1'
-export_file_name = 'export.pkl'
+export_file_name = 'dgwbh.pkl'
 
 classes = ['lidl', 'spisestuerne', 'netto', 'seveneleven']
 path = Path(__file__).parent
