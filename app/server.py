@@ -51,7 +51,7 @@ loop.close()
 
 @app.route('/')
 async def homepage(request):
-    html_file = path / 'view' / 'SignInPage.html'
+    html_file = path / 'view' / 'CharityPage.html'
     return HTMLResponse(html_file.open().read())
 
 
