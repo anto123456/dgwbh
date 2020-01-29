@@ -59,7 +59,7 @@ async def homepage(request):
 async def upload_file(request):
     csv_data = await request.form()
     csv_bytes = await (csv_data['file'].read())
-    csv = open_csv(BytesIO(csv_bytes))
+    #csv = (BytesIO(csv_bytes))
     return JSONResponse({'result': 'done'})
     #print(str(filename))
     #JSONResponse({'result': str(filename)})
