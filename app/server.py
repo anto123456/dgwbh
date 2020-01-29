@@ -58,8 +58,9 @@ async def homepage(request):
 @app.route('/upload', methods=['POST'])
 async def upload_file(request):
     csv_data = await request.form()
-    filename = csv_data["upload_file"].filename
-    print(str(filename))
+    csv_bytes = await (img_data['file'].read())
+    csv = open_csv(BytesIO(img_bytes))
+    #print(str(filename))
     #JSONResponse({'result': str(filename)})
     #prediction = learn.predict('lidl')
     #return JSONResponse({'result': str(prediction)})
