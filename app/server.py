@@ -55,10 +55,13 @@ async def homepage(request):
     return HTMLResponse(html_file.open().read())
 
 
-@app.route('/analyze', methods=['POST'])
-async def analyze(request):
+@app.route('/upload', methods=['POST'])
+async def upload_file(request):
     prediction = learn.predict('lidl')
     return JSONResponse({'result': str(prediction)})
+#async def analyze(request):
+ #   prediction = learn.predict('lidl')
+  #  return JSONResponse({'result': str(prediction)})
     #img_data = await request.form()
     #img_bytes = await (img_data['file'].read())
     #img = open_image(BytesIO(img_bytes))
