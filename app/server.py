@@ -60,7 +60,7 @@ async def upload_file(request):
     csv_data = await request.form()
     csv_bytes = await (csv_data['file'].read())
     #csv = (BytesIO(csv_bytes))
-    return JSONResponse({'result': str(csv_bytes)})
+    return JSONResponse({'bla': str(csv_bytes)})
     #print(str(filename))
     #JSONResponse({'result': str(filename)})
     #prediction = learn.predict('lidl')
