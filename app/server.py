@@ -60,6 +60,9 @@ async def upload_file(request):
     csv_data = await request.form()
     csv_bytes = await (csv_data['file'].read())
     #csv = (BytesIO(csv_bytes))
+    fh = open(r"csv_bytes", "r").read()
+    for line in fh.split("n"):
+        print(line)
     return JSONResponse(str(csv_bytes))
     #print(str(filename))
     #JSONResponse({'result': str(filename)})
