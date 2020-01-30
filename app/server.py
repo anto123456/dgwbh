@@ -131,9 +131,6 @@ async def upload_file(request):
         #else: 
         #if none of those patterns found, return the original name
          #   return programme 
-
-  
-return JSONResponse({'result': x})
           
 # Updated the study programme columns 
   #  df1['Prediction'] = df1['Prediction'].apply(clean_predictions)
