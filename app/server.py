@@ -63,7 +63,7 @@ async def upload_file(request):
     csv_bytes = await (csv_data['file'].read())
     
     x = str(csv_bytes)
-    d = x.split('\\r\\')
+    #d = x.split('\\r\\')
     
     df = pd.DataFrame()
     df['Dato'] = df.apply(lambda _: '', axis=1)
@@ -79,11 +79,12 @@ async def upload_file(request):
     saldo=[]
     status=[]
     afstemt=[]
+    
+    return JSONResponse({'result': x})
 
-    for line in d:
-        return JSONResponse({'result': d})
-        a = d.index(line)
-        return JSONResponse({'result': a})
+
+    #for line in d:
+        #a = d.index(line)
       #  b = d[a].split('\\";\\"')
        # date.append(b[0])
         #text.append(b[1])
