@@ -80,7 +80,7 @@ async def upload_file(request):
     status=[]
     afstemt=[]
     
-    print(d.content_type)
+    return JSONResponse({'result': str(d.content_type)})
 
     #for line in d:
      #   a = d.index(line)
