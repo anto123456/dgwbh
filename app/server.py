@@ -79,6 +79,8 @@ async def upload_file(request):
     saldo=[]
     status=[]
     afstemt=[]
+    
+    print(d.content_type)
 
     #for line in d:
      #   a = d.index(line)
