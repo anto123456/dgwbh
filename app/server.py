@@ -79,10 +79,9 @@ async def upload_file(request):
     saldo=[]
     status=[]
     afstemt=[]
-    
-    return JSONResponse({'result': str(d.content_type)})
 
-    #for line in d:
+    for line in d:
+        return JSONResponse({'result': d})
      #   a = d.index(line)
       #  b = d[a].split('\\";\\"')
        # date.append(b[0])
@@ -134,7 +133,7 @@ async def upload_file(request):
   #  df1['Prediction'] = df1['Prediction'].apply(clean_predictions)
     
     #csv = (BytesIO(csv_bytes))
-    return JSONResponse({'result': d})
+    
     #print(str(filename))
     #JSONResponse({'result': str(filename)})
     #prediction = learn.predict('lidl')
