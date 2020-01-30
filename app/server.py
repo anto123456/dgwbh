@@ -82,7 +82,7 @@ async def upload_file(request):
 
     for line in d:
         return JSONResponse({'result': d})
-     #   a = d.index(line)
+        a = d.index(line)
       #  b = d[a].split('\\";\\"')
        # date.append(b[0])
         #text.append(b[1])
