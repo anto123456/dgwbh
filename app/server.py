@@ -85,14 +85,14 @@ async def upload_file(request):
     
 
 
-    #for line in range(d.shape[0]):
-     #   a = d[line].split('\\";\\"')
-      #  date.append(a[0])
-       # text.append(a[1])
-        #amount.append(a[2])
-        #saldo.append(a[3])
-        #status.append(a[4])
-        #afstemt.append(a[5])
+    for line in range(d.shape[0]):
+        a = d[line].split('\\";\\"')
+        date.append(a[0])
+        text.append(a[1])
+        amount.append(a[2])
+        saldo.append(a[3])
+        status.append(a[4])
+        afstemt.append(a[5])
     
     #df['Dato']=date
     #df['Tekst']=text
@@ -132,7 +132,7 @@ async def upload_file(request):
         #if none of those patterns found, return the original name
          #   return programme 
             
-      return JSONResponse({'result': d})
+      return JSONResponse({'ok'})
           
 # Updated the study programme columns 
   #  df1['Prediction'] = df1['Prediction'].apply(clean_predictions)
