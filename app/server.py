@@ -80,22 +80,22 @@ async def upload_file(request):
     status=[]
     afstemt=[]
 
-    for line in d:
-        a = d.index(line)
-        b = d[a].split('\\";\\"')
-        date.append(b[0])
-        text.append(b[1])
-        amount.append(b[2])
-        saldo.append(b[3])
-        status.append(b[4])
-        afstemt.append(b[5])
+    #for line in d:
+     #   a = d.index(line)
+      #  b = d[a].split('\\";\\"')
+       # date.append(b[0])
+        #text.append(b[1])
+        #amount.append(b[2])
+        #saldo.append(b[3])
+        #status.append(b[4])
+        #afstemt.append(b[5])
     
-    df['Dato']=date
-    df['Tekst']=text
-    df['Beløb']=amount
-    df['Saldo']=saldo
-    df['Status']=status
-    df['Afstemt']=afstemt
+    #df['Dato']=date
+    #df['Tekst']=text
+    #df['Beløb']=amount
+    #df['Saldo']=saldo
+    #df['Status']=status
+    #df['Afstemt']=afstemt
     
     #df['Dato'] = df['Dato'].replace({'\n\"':''}, regex = True)
     #df['Dato'] = df['Dato'].replace({'\"':''}, regex = True)
