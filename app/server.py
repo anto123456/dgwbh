@@ -61,7 +61,7 @@ async def upload_file(request):
     csv_bytes = await (csv_data['file'].read())
     
     x = str(csv_bytes)
-   # d = csv_bytes.split('\\r\\')
+    d = x.split('\\r\\')
     
     #df = pd.DataFrame()
     #df['Dato'] = df.apply(lambda _: '', axis=1)
@@ -130,7 +130,7 @@ async def upload_file(request):
   #  df1['Prediction'] = df1['Prediction'].apply(clean_predictions)
     
     #csv = (BytesIO(csv_bytes))
-    return JSONResponse({'result': x})
+    return JSONResponse({'result': d})
     #print(str(filename))
     #JSONResponse({'result': str(filename)})
     #prediction = learn.predict('lidl')
