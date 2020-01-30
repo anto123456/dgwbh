@@ -3,6 +3,7 @@ import asyncio
 import uvicorn
 import pandas as pd
 import re
+import numpy as np
 from fastai import *
 from fastai.vision import *
 from io import BytesIO
@@ -63,7 +64,8 @@ async def upload_file(request):
     csv_bytes = await (csv_data['file'].read())
     
     x = str(csv_bytes)
-    #d = x.split('\\r\\')
+    l = x.split('\\r\\')
+    d = np.array(l)
     
     df = pd.DataFrame()
     df['Dato'] = df.apply(lambda _: '', axis=1)
@@ -80,18 +82,17 @@ async def upload_file(request):
     status=[]
     afstemt=[]
     
-    return JSONResponse({'result': x})
+    
 
 
-    #for line in d:
-        #a = d.index(line)
-      #  b = d[a].split('\\";\\"')
-       # date.append(b[0])
-        #text.append(b[1])
-        #amount.append(b[2])
-        #saldo.append(b[3])
-        #status.append(b[4])
-        #afstemt.append(b[5])
+    #for line in range(d.shape[0]):
+     #   a = d[line].split('\\";\\"')
+      #  date.append(a[0])
+       # text.append(a[1])
+        #amount.append(a[2])
+        #saldo.append(a[3])
+        #status.append(a[4])
+        #afstemt.append(a[5])
     
     #df['Dato']=date
     #df['Tekst']=text
@@ -130,6 +131,8 @@ async def upload_file(request):
         #else: 
         #if none of those patterns found, return the original name
          #   return programme 
+            
+      return JSONResponse({'result': d})
           
 # Updated the study programme columns 
   #  df1['Prediction'] = df1['Prediction'].apply(clean_predictions)
